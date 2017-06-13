@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "elemental-apex-168200",
+  "private_key_id": "4f5273deea6ea6f09d09671926beb731d921994a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCgsxsqxa4MxQrd\n3R46b2nMpVrzG56MlRZxk7Sh/QaCjrF+UXnBNES072s45vhsqBzUT/EJLfc1pXbD\ngLckaYpk8BKW24D4+H9lbE5SgolK9Tr8sepqyLMKE99Tkq1fMglMwUqN+rDARBja\nFffxh3njcDI+zjN7xDpXGyx36OrK9pQ4RosfIvtHqUcPKz8xZLiTTaKSIEIEj5nj\ntqBvzW8W8kCcV3d7yubAY3UISb6BD4KQ5EOHPviw3VvoVdkMG/btZ8mqzhELzkT/\n+U+Gmv5qKAUR5mVdyTCSVitnhOTk13bxlNAJD9GhZsrp5g+vjYwBfky/DhLyjG8s\nN30NnPYBAgMBAAECggEAFDVh0bepQxbWXn8riXqwSdlzfgX3osMu3tqNyR8qHen2\n3SU+0/KQP1aqW64ECJn9gh+JdreOknL74+sAXPZevoHIPKte5TBOyQDdOpgKzt/W\n6qcvDP2vMjG8kGRuI/4FWF8oUoF3j74gh/BiTT/VrqnRz78bj1FmasTSi0PBnwM/\nK6eLxaRY9r/sie/qCT1ZuH+feMwlzesbPbu4TSCqhh0oivAZtdVXZcUOjQE9O5EP\n7D9wkfnuFR95ZgKO1EmOwdc/LVpZ3OkC6WGryU+ShVXSsIxiTnWJzzsI1NE/+6Mw\nlLBZSJP7KFEJQQbOWEjmQXwwItcaz9srfEogpEP3yQKBgQDOvE79NXjfPN3FqV7U\nndCgje5N2DymgBH69Hl1eWTxTg9g9KT8qmxSdVmqWSQQGvy5kjnYpiBBpHZMrE72\nb/53Uncq/5zATpjnBIexsTX8YmCxT7x+7WkIm7raX77Z77qXtpeqJQbl1jK7IYHa\ncqKRP/cw2Rqi73Q+H+m5lbleTQKBgQDG/mwGVeHBHqmrbeRF4xn9OAo0pChEfpN7\n1s9Er9XrTTyveXTc8huGK/4uFOX3DzrDPRb0cQAl3JCazEQdLr+Uh2LV2QorkJ9X\nelyg9LWyj3K2coh9SEtl7JwHbs4EOG9Z5jTb7wXOucl0IKssfbjIFNav1OPm053H\nq6JlGrbYhQKBgQDJLWh0cTeZjaKGeiZFIvnlc5iF+jozEIfuvT8AuUwoofzHLerr\n0XAt4fKKmcpFPe3XK9vM3wSevEs+m6MPn7ZyKTa8Chhg71tN3BOsMDXHz3gms+BL\nZ/6BGQKBBRE1BVt/zXjTYsrOmF2vypCRomJelG+ZAnwwOHLXDbklFvVXNQKBgAGm\n2v6yd81Ck+X4Y4yw9eZEMNF/C1aGNnMwtUe8renmGjrapz2uRMw4UUPQqJgEaFh2\niVo+FeI6kni2eVpEqRJyjT95Lbxu1uPDAEHVxixVRH5/NOLVVsrhy+nD4bHnRgVZ\nA9dPhJzSrflozALyiDYg9ic/fSTNXOHras2sCxiBAoGASEeL0YmUVJCDnAkRMEWL\nyPUH2IAkdVaRU1oiFKbFh6Kmu2tbLg57nJ4fTpZnZk+HiK4aFrRJ2epZaCGpFW5f\nHdtoX2cebVs85cSMfGM+E7H2U5qxvIUfGYHaLe1owGxsrC0qlUP3q6DgwdhrVCh0\nDYNXB4BSjGM+PIjWFdjWgwc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "hw5-sheets@elemental-apex-168200.iam.gserviceaccount.com",
+  "client_id": "108213644698969858263",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hw5-sheets%40elemental-apex-168200.iam.gserviceaccount.com"
+}

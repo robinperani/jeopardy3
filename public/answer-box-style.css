@@ -1,0 +1,30 @@
+/*
+Animation for the chosen question
+*/
+
+#jeop-chosen-question {
+  height: 200px;
+  width: 200px;
+  margin: 0;
+  background-color: white;
+  animation-name: stretch;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-delay: 0;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(0);
+    background-color: blue;
+    border-radius: 0%;
+  }
+  50% {
+    background-color: #add8e6;
+  }
+  100% {
+    transform: scale(1);
+    background-color: white;
+    border-radius: 10%;
+  }
+}

@@ -1,0 +1,252 @@
+<!--
+  Note: You should not have to modify this file. (You are allowed to, but
+  not expected to.)
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jeopardy!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="answer-box-style.css"/>
+    <link rel="stylesheet" href="player-box-style.css"/>
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+    <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
+
+    <script src="jeopardyconstants.js" defer></script>
+    <script src="welcome-screen.js" defer></script>
+    <script src="create-category-screen.js" defer></script>
+    <script src="create-game-screen.js" defer></script>
+    <script src="choose-game-screen.js" defer></script>
+    <script src="play-game-screen.js" defer></script>
+    <script src="vdbman.js" defer></script>
+    <script src="app.js" defer></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+
+    <div id="welcome-screen">
+      <h1>Jeopardy! Game Master</h1>
+      <h1 id="game-welcome-paragraph"><i>Game setup is as easy as <b>1, 2, 3, (4)!</b></i></h1>
+
+      <div class="welcome-step" id="welc1">
+        <h2>Step 1 (Easy): Game creation using default games</h2>
+        <div class="welcome-para-group" id="welc1-pg">
+          <p> The Jeopardy Game Master database is initially empty.
+              While there are options below that allow you to create a Jeopardy game completely
+              from scratch (see Step 1 (Alternate)), the easiest way to start playing is to load the default
+              Jeopardy and Double Jeopardy games into the database. You can do this by
+              selecting the <b>Transfer Defaults</b> button.
+          </p>
+        </div>
+        <div class="welcome-button-group" id="welc1-bg">
+          <button id="gm-xfer-defaults"> Transfer Defaults </button>
+        </div>
+      </div>
+
+      <div class="welcome-step" id="welc2">
+        <h2>Step 1 (Alternate): Create your own categories and/or game!</h2>
+        <div class="welcome-para-group" id="welc2-pg">
+          <p> A Jeopardy game layout includes six categories which are presented as columns
+            on the game board. Each category holds five questions connected via a
+            common theme. To create a custom category select the <b>Create Category</b>
+            button.  To create a custom game select the <b>Create Game</b> button.
+          </p>
+        </div>
+        <div class="welcome-button-group" id="welc2-bg">
+          <button id="gm-create-category"> Create Category </button>
+          <button id="gm-create-game"> Create Game </button>
+        </div>
+      </div>
+
+      <div class="welcome-step" id="welc3">
+        <h2>Step 2</h2>
+        <div class="welcome-para-group" id="welc3-pg">
+          <p> After you have edited your Jeopardy games, it's time to
+              choose one game to present to the players.  To choose a game select the
+              <b>Choose Game</b> button.
+          </p>
+        </div>
+        <div class="welcome-button-group" id="welc3-bg">
+          <button id="gm-choose-game"> Choose Game </button>
+        </div>
+      </div>
+
+      <div class="welcome-step" id="welc4">
+        <h2>Step 3</h2>
+        <div class="welcome-para-group" id="welc4-pg">
+          <p> To play Jeopardy select the <b>Play Game</b> button.
+          </p>
+        </div>
+        <div class="welcome-button-group" id="welc4-bg">
+        <button id="gm-play-game"> Play Game </button>
+        </div>
+      </div>
+
+      <div class="welcome-step" id="welc5">
+        <h2> Step 4 (Optional): Run Route Tests </h2>
+        <div class="welcome-button-group" id="welc5-bg">
+        </div>
+        <div class="welcome-para-group" id="welc5-pg">
+          <p> The Jeopardy application is designed with a "virtual database manager" that
+              sits in between the game authoring/playing screens and the database.
+              The route tests bypass the user interface portions of the application and directly
+              excercise the six routes that server.js supports.  These route tests can be seen
+              in the file vdbman.js in function runRouteTests. To run the route unit tests select
+              the <b>Run Route Tests</b> button.
+          </p>
+          <button id="gm-run-route-tests"> Run Route Tests </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="create-category-screen" class="inactive">
+      <h1>Game Master Create Category</h1>
+      <fieldset>
+      <form>
+      <h2>Choose a Title:</h2>
+      <input type="text" id="category-name" placeholder="Category Name" />
+      <h2>For each question, choose a value, the answer, and the question:</h2>
+      <div id="question-grid">
+        <div class=jeop-triplet id="q1-column">
+          <input type="text" class=jeop-value id="q1-v" placeholder="100" />
+          <input type="text" class=jeop-question id="q1-q" placeholder="Answer" />
+          <input type="text" class=jeop-answer id="q1-a" placeholder="Question?" />
+        </div>
+        <div class=jeop-triplet id="q2-column">
+          <input type="text" class=jeop-value id="q2-v" placeholder="200" />
+          <input type="text" class=jeop-question id="q2-q" placeholder="Answer" />
+          <input type="text" class=jeop-answer id="q2-a" placeholder="Question?" />
+        </div>
+        <div class=jeop-triplet id="q3-column">
+          <input type="text" class=jeop-value id="q3-v" placeholder="300" />
+          <input type="text" class=jeop-question id="q3-q" placeholder="Answer" />
+          <input type="text" class=jeop-answer id="q3-a" placeholder="Question?" />
+        </div>
+        <div class=jeop-triplet id="q4-column">
+          <input type="text" class=jeop-value id="q4-v" placeholder="400" />
+          <input type="text" class=jeop-question id="q4-q" placeholder="Answer" />
+          <input type="text" class=jeop-answer id="q4-a" placeholder="Question?" />
+        </div>
+        <div class=jeop-triplet id="q5-column">
+          <input type="text" class=jeop-value id="q5-v" placeholder="500" />
+          <input type="text" class=jeop-question id="q5-q" placeholder="Answer" />
+          <input type="text" class=jeop-answer id="q5-a" placeholder="Question?" />
+        </div>
+      </div>
+      <button class ="ok-button"> Create </button>
+      <button class ="cancel-button"> Cancel </button>
+      </form>
+      </fieldset>
+    </div>
+
+    <div id="create-game-screen" class="inactive">
+      <h1>Game Master Create Game</h1>
+      <fieldset>
+      <form>
+      <h2>Choose a Game Title:</h2>
+      <input type="text" id="game-title" placeholder="Blank Title" />
+      <div id="game-category-grid">
+        <select class ="cat-menu" id=cgs-cat1></select>
+        <select class ="cat-menu" id=cgs-cat2></select>
+        <select class ="cat-menu" id=cgs-cat3></select>
+        <select class ="cat-menu" id=cgs-cat4></select>
+        <select class ="cat-menu" id=cgs-cat5></select>
+        <select class ="cat-menu" id=cgs-cat6></select>
+      </div>
+      <button class ="ok-button"> Create </button>
+      <button class ="cancel-button"> Cancel </button>
+      </form>
+      </fieldset>
+    </div>
+
+
+    <div id="choose-game-screen" class="inactive">
+      <h1>Game Master Choose Game</h1>
+      <fieldset>
+      <form>
+      <div id="game-blah-blah">
+        <select class ="game-menu" id=cgs-gam1></select>
+      </div>
+      <button class ="ok-button"> Choose </button>
+      <button class ="cancel-button"> Cancel </button>
+      </form>
+      </fieldset>
+    </div>
+
+    <div id="play-game-screen" class="inactive">
+      <h1>JEOPARDY</h1>
+      <div id="jeop-studio">
+      <div id="jeopardy-grid">
+        <div class ="jeop-category" id="pgs-cat0">
+          <div class ="jeop-title-box" id="pgs-cat0-title"> Title 0 </div>
+          <div class ="jeop-box" id="pgs-cat0-q0"> 100 </div>
+          <div class ="jeop-box" id="pgs-cat0-q1"> 200 </div>
+          <div class ="jeop-box" id="pgs-cat0-q2"> 300 </div>
+          <div class ="jeop-box" id="pgs-cat0-q3"> 400 </div>
+          <div class ="jeop-box" id="pgs-cat0-q4"> 500 </div>
+        </div>
+        <div class ="jeop-category" id="pgs-cat1">
+          <div class ="jeop-title-box" id="pgs-cat1-title"> Title 1 </div>
+          <div class ="jeop-box" id="pgs-cat1-q0"> 100 </div>
+          <div class ="jeop-box" id="pgs-cat1-q1"> 200 </div>
+          <div class ="jeop-box" id="pgs-cat1-q2"> 300 </div>
+          <div class ="jeop-box" id="pgs-cat1-q3"> 400 </div>
+          <div class ="jeop-box" id="pgs-cat1-q4"> 500 </div>
+        </div>
+        <div class ="jeop-category" id="pgs-cat2">
+          <div class ="jeop-title-box" id="pgs-cat2-title"> Title 2 </div>
+          <div class ="jeop-box" id="pgs-cat2-q0"> 100 </div>
+          <div class ="jeop-box" id="pgs-cat2-q1"> 200 </div>
+          <div class ="jeop-box" id="pgs-cat2-q2"> 300 </div>
+          <div class ="jeop-box" id="pgs-cat2-q3"> 400 </div>
+          <div class ="jeop-box" id="pgs-cat2-q4"> 500 </div>
+        </div>
+        <div class ="jeop-category" id="pgs-cat3">
+          <div class ="jeop-title-box" id="pgs-cat3-title"> Title 3 </div>
+          <div class ="jeop-box" id="pgs-cat3-q0"> 100 </div>
+          <div class ="jeop-box" id="pgs-cat3-q1"> 200 </div>
+          <div class ="jeop-box" id="pgs-cat3-q2"> 300 </div>
+          <div class ="jeop-box" id="pgs-cat3-q3"> 400 </div>
+          <div class ="jeop-box" id="pgs-cat3-q4"> 500 </div>
+        </div>
+        <div class ="jeop-category" id="pgs-cat4">
+          <div class ="jeop-title-box" id="pgs-cat4-title"> Title 4 </div>
+          <div class ="jeop-box" id="pgs-cat4-q0"> 100 </div>
+          <div class ="jeop-box" id="pgs-cat4-q1"> 200 </div>
+          <div class ="jeop-box" id="pgs-cat4-q2"> 300 </div>
+          <div class ="jeop-box" id="pgs-cat4-q3"> 400 </div>
+          <div class ="jeop-box" id="pgs-cat4-q4"> 500 </div>
+        </div>
+        <div class ="jeop-category" id="pgs-cat5">
+          <div class ="jeop-title-box" id="pgs-cat5-title"> Title 5 </div>
+          <div class ="jeop-box" id="pgs-cat5-q0"> 100 </div>
+          <div class ="jeop-box" id="pgs-cat5-q1"> 200 </div>
+          <div class ="jeop-box" id="pgs-cat5-q2"> 300 </div>
+          <div class ="jeop-box" id="pgs-cat5-q3"> 400 </div>
+          <div class ="jeop-box" id="pgs-cat5-q4"> 500 </div>
+        </div>
+        <div id = "jeop-chosen-question" class="inactive"> </div>
+      </div>
+
+      <div class = "player" id = "player-1">
+        <div  class = "player-box" class = "player-name" id = "p1-name"> Player Score is:</div>
+        <div class = "player-box" class = "player-score" id = "p1-score" class = "active"> 0 </div>
+      </div>
+    </div>
+
+      <button class ="ok-button"> OK </button>
+      <button class ="cancel-button"> Cancel </button>
+      <input type="text" id = "player-answer" placeholder="Who? What? Where?" />
+      <button class ="submit-button"> Submit Answer</button>
+
+    </div>
+
+  </body>
+</html>

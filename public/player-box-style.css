@@ -1,0 +1,31 @@
+/*
+Animation for the player score box
+*/
+
+#player-1 {
+  animation-name: mymove;
+  animation-duration: 2s;
+}
+
+@keyframes mymove {
+  0% {
+    font-size: 12px;
+  }
+  20% {
+    font-size: 20px;
+    transform: rotate(-180deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+    font-size: 30px;
+  }
+  75% {
+    transform: rotate(180deg);
+    font-size: 30px;
+  }
+  100% {
+    transform: rotate(0deg);
+    font-size: 12px;
+  }
+}
